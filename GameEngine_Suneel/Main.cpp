@@ -1,23 +1,14 @@
 #include "sfml/graphics.hpp"
+#include "Engine.h"
 
 
 int main(int argc, char* args[]) {
+	//Declare and get instance of singleton
+	Engine& gameEngine = Engine::GetInstance();
 	sf::RenderWindow window(sf::VideoMode(800, 600), "My Game Engine");
+	// Pass window referance to the engine and start
+	gameEngine.Start(& window);
 
-	//Run the program as long as the window is open
-
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event) == true)
-		{
-			//CLose requested event
-			if (event.type == sf::Event::Closed)
-			{
-				window.close();
-			}
-		}
-	}
 
 	return 0;
 }
