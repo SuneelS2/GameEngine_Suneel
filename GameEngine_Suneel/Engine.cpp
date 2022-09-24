@@ -34,3 +34,9 @@ Engine& Engine::GetInstance()
 	static Engine instance;
 	return instance;
 }
+
+void Engine::addSystem(ECS::EntitySystem* newSys)
+{
+	world->registerSystem(newSys);
+	world->enableSystem(newSys);
+}
