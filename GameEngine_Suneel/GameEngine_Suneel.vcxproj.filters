@@ -24,7 +24,7 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Systems\RenderingSystems.cpp">
+    <ClCompile Include="Systems\RenderingSystem.cpp">
       <Filter>Header Files\Systems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="Components.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Systems\RenderingSystems.h">
+    <ClInclude Include="Systems\RenderingSystem.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
   </ItemGroup>

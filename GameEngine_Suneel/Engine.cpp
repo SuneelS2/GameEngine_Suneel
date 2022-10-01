@@ -27,6 +27,7 @@ void Engine::Update()
 			window->close();
 		}
 	}
+	world->tick(10.0f);
 }
 
 Engine& Engine::GetInstance()
