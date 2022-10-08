@@ -1,6 +1,6 @@
 #include "AnimationSystem.h"
 
-void AnimationSystem::tick(ECS::World* world, float Deltatime)
+void AnimationSystem::tick(ECS::World* world, float deltaTime)
 {
 	world->each<Animator, Sprite2D>(
 		[&](ECS::Entity* entity,
@@ -8,8 +8,8 @@ void AnimationSystem::tick(ECS::World* world, float Deltatime)
 			ECS::ComponentHandle<Sprite2D> sprite2D
 			) -> void
 		{
-			animator->currentTime += Deltatime;
-			if (animator->currentTime >= animator->nextFrametime)
+			animator->currentTime += deltaTime;
+			if (animator->currentTime >= animator->nextFrameTime)
 			{
 				animator->currentTime = 0;
 				animator->currentColumn = (animator->currentColumn + 1) % animator->totalColumns;

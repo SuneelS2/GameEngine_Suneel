@@ -43,7 +43,7 @@ public:
 	int totalColumns;
 	int totalRows;
 	float currentTime;
-	float nextFrametime;
+	float nextFrameTime;
 	bool bFacingRight;
 
 	Animator(int newWidth, int newHeight, float timeBetweenFrames, int columns, int rows) 
@@ -54,7 +54,7 @@ public:
 		this->currentRow = 0;
 		this->totalColumns = columns;
 		this->totalRows = rows;
-		this->nextFrametime = timeBetweenFrames;
+		this->nextFrameTime = timeBetweenFrames;
 		this->currentTime = 0;
 		this->bFacingRight = true;
 	}
