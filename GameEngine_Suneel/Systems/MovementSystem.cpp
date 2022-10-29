@@ -13,25 +13,33 @@ void MovementSystem::tick(ECS::World* world, float deltaTime)
 			//ECS::ComponentHandle<InputController> input = entity->get<InputController>();
 			if (input->bInputActive == true)
 			{
-				if (input -> w)
-				{
-					transform->ySpeed =- transform->ySpeedMod;
-					transform->Move();
-				}
-				if (input -> a)
-				{
-					transform->xSpeed =- transform->xSpeedMod;
-					transform->Move();
-				}
 				if (input->s)
 				{
 					transform->ySpeed = transform->ySpeedMod;
 					transform->Move();
 				}
+				else if (input -> w)
+				{
+					transform->ySpeed =- transform->ySpeedMod;
+					transform->Move();
+				}
+				else {
+					transform->ySpeed = 0;
+				}
+				
 				if (input->d)
 				{
 					transform->xSpeed = transform->xSpeedMod;
 					transform->Move();
+				}
+				else if (input -> a)
+				{
+					transform->xSpeed =- transform->xSpeedMod;
+					transform->Move();
+				}
+				else
+				{
+					transform->xSpeed = 0;
 				}
 			}
 		});
