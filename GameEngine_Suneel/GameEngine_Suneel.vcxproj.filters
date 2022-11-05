@@ -16,6 +16,9 @@
     <Filter Include="Header Files\Systems">
       <UniqueIdentifier>{51695358-bb72-441e-86eb-103954653981}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{339c15b8-50cc-48c3-830b-55541738899e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Systems\PhysicsSystem.cpp">
       <Filter>Header Files\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\MainCamera.cpp">
+      <Filter>Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Systems\PhysicsSystem.h">
       <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\MainCamera.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
