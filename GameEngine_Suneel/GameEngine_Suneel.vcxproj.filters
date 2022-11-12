@@ -19,6 +19,9 @@
     <Filter Include="Interface">
       <UniqueIdentifier>{339c15b8-50cc-48c3-830b-55541738899e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interface\GUI_Components">
+      <UniqueIdentifier>{02a6154f-20e0-4b78-b3bb-eee728eed540}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -45,6 +48,18 @@
     <ClCompile Include="Interface\MainCamera.cpp">
       <Filter>Interface</Filter>
     </ClCompile>
+    <ClCompile Include="Interface\States.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\GUI_Components\Button.cpp">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\GUI_Components\ButtonMap.cpp">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\PauseMenu.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -55,9 +70,6 @@
     </ClInclude>
     <ClInclude Include="Components.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Systems\RenderingSystem.h">
-      <Filter>Header Files\Systems</Filter>
     </ClInclude>
     <ClInclude Include="Systems\AnimationSystem.h">
       <Filter>Header Files\Systems</Filter>
@@ -72,6 +84,21 @@
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
     <ClInclude Include="Interface\MainCamera.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\States.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Systems\RenderingSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\GUI_Components\Button.h">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\GUI_Components\ButtonMap.h">
+      <Filter>Interface\GUI_Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\PauseMenu.h">
       <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>

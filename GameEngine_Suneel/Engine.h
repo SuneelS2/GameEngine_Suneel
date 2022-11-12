@@ -9,6 +9,7 @@
 #include "Systems/InputSystem.h"
 #include "Systems/PhysicsSystem.h"
 #include "Interface/MainCamera.h"
+#include "Interface/PauseMenu.h"
 
 class Engine
 {
@@ -16,6 +17,7 @@ public:
 	sf::RenderWindow* window = nullptr;
 	ECS::World* world = nullptr;
 	class MainCamera* mainCamera = nullptr;
+	class PauseMenu* pauseMenu;
 private: 
 	bool bQuit;
 
@@ -33,6 +35,7 @@ private:
 
 	~Engine();
 	void Update();
+	void onGameInactiveState();
 	
 };
 

@@ -6,33 +6,36 @@ RenderingSystem::~RenderingSystem() = default;
 
 void RenderingSystem::tick(ECS::World* world, float deltaTime)
 {
-	// Clear before drawing all texture
-	Engine::GetInstance().window->clear();
-
-	world->each<Transform, Sprite2D>([&](ECS::Entity* entity, 
-		ECS::ComponentHandle<Transform> transform, 
-		ECS::ComponentHandle<Sprite2D> sprite2D
-		) -> void 
+	if (States::getPausedState() == false)
 	{
-		//check if an entity had their texture already loaded
-			if (textureMap.count(sprite2D->texture) < 1) {
-				textureMap[sprite2D->texture] = LoadTexture(sprite2D->texture);
-			}
-			// If no texture is found, then add a texture to the map
-			if (sprite2D->picture.getTexture() == nullptr) {
-				sprite2D->picture.setTexture(*textureMap[sprite2D->texture]);
-				sprite2D->width = sprite2D->picture.getGlobalBounds().width;
-				sprite2D->height = sprite2D->picture.getGlobalBounds().height;
-			}
+		// Clear before drawing all texture
+		Engine::GetInstance().window->clear();
 
-			// Update anbd draw to the screen 
-			sprite2D->picture.setPosition(transform->xPos, transform->yPos);
-			Engine::GetInstance().window->draw(sprite2D->picture);
+		world->each<Transform, Sprite2D>([&](ECS::Entity* entity,
+			ECS::ComponentHandle<Transform> transform,
+			ECS::ComponentHandle<Sprite2D> sprite2D
+			) -> void
+			{
+				//check if an entity had their texture already loaded
+				if (textureMap.count(sprite2D->texture) < 1) {
+					textureMap[sprite2D->texture] = LoadTexture(sprite2D->texture);
+				}
+				// If no texture is found, then add a texture to the map
+				if (sprite2D->picture.getTexture() == nullptr) {
+					sprite2D->picture.setTexture(*textureMap[sprite2D->texture]);
+					sprite2D->width = sprite2D->picture.getGlobalBounds().width;
+					sprite2D->height = sprite2D->picture.getGlobalBounds().height;
+				}
 
-	});
+				// Update anbd draw to the screen 
+				sprite2D->picture.setPosition(transform->xPos, transform->yPos);
+				Engine::GetInstance().window->draw(sprite2D->picture);
 
-	// Display update
-	Engine::GetInstance().window->display();
+			});
+
+		// Display update
+		Engine::GetInstance().window->display();
+	}
 }
 
 sf::Texture* RenderingSystem::LoadTexture(std::string texturePath)
