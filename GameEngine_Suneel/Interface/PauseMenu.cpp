@@ -82,12 +82,12 @@ void PauseMenu::InitButtons()
 	);
 	ButtonMap::GetMap().insert(
 		{
-			"LOAD", new Button(size, sf::Color(100, 100, 100, 255), "SAVE TILE MAP")
+			"LOAD", new Button(size, sf::Color(100, 100, 100, 255), "LOAD TILE MAP")
 		}
 	);
 	ButtonMap::GetMap().insert(
 		{
-			"SAVE", new Button(size, sf::Color(100, 100, 100, 255), "LOAD TILE MAP")
+			"SAVE", new Button(size, sf::Color(100, 100, 100, 255), "SAVE TILE MAP")
 		}
 	);
 	ButtonMap::GetMap().insert(

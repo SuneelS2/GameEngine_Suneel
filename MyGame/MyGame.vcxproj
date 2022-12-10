@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)Packages/sfml-2.5.1/include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Packages/sfml-2.5.1/include;$(SolutionDir)GameEngine_Suneel;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Packages/SFML-2.5.1/lib;$(SolutionDir)GameEngine_Suneel/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -132,11 +132,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entities\Dummy.cpp" />
+    <ClCompile Include="Entities\Entity.cpp" />
     <ClCompile Include="Entities\Player.cpp" />
+    <ClCompile Include="Entities\Soldier.cpp" />
     <ClCompile Include="GameMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\Dummy.h" />
+    <ClInclude Include="Entities\Entity.h" />
     <ClInclude Include="Entities\Player.h" />
+    <ClInclude Include="Entities\Soldier.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
